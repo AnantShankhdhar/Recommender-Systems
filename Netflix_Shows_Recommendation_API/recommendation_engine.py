@@ -1,6 +1,5 @@
 from sklearn.metrics.pairwise import cosine_similarity
-import pandas as pd
-import pickle
+
 def recommended_shows(title, shows_df, tfidf_vect):
 
     '''
@@ -29,6 +28,3 @@ def recommended_shows(title, shows_df, tfidf_vect):
     
     return response
 
-netflix_titles_df = pd.read_csv('netflix_titles.csv', usecols=[2])
-tfidf_vect_pkl = pickle.load(open('tfidf_vectorizer.pickle', 'rb'))
-print(recommended_shows('The Matrix',netflix_titles_df,tfidf_vect_pkl))
